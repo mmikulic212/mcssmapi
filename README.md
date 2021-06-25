@@ -4,6 +4,8 @@ The mcssmapi library is providing access to Cisco Smart Account licensing API wi
 I needed to access licensing portal to get SLR licensing process a little bit easier.
 I was inspired to create API by great app https://developer.cisco.com/codeexchange/github/repo/CiscoDevNet/smart-license-app/.
 
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/mmikulic212/mcssmapi)
+
 ## Version
 (TODO)
 - more API calls
@@ -17,7 +19,7 @@ I was inspired to create API by great app https://developer.cisco.com/codeexchan
 For use the module you need to have:
 - CCO/Cisco.com Account
 - Valid Smart Account (SA) and Virtual Account in CSSM
-- IOS-XE devices with Smart Licensing enalbed image version (>16.10.1)
+- IOS-XE devices with Smart Licensing enabled image version (>16.10.1)
 - Generated API access (Client ID and Client Secret)
 
 ## Installation
@@ -73,4 +75,4 @@ App is released under the MIT License. See LICENSE for details.
 
 ## Contact
 
-Github: 
+Github: https://github.com/mmikulic212/mcssmapi

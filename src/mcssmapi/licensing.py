@@ -84,7 +84,7 @@ class Licensing:
         # print(url)
         # print(self.session.headers)
         # print(body)
-        json_body = json.dumps(body)
+        # json_body = json.dumps(body)
         # resp = self.session.post(url,data=json_body)
         resp = self.session.request(method,url,json=body)
         result['response'] = resp.json()

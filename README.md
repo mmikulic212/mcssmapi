@@ -11,6 +11,11 @@ I was inspired to create API by great app https://developer.cisco.com/codeexchan
 - more API calls
 - logging
 
+0.2 (4.11.2021)
+- init.py fix
+- fixed request to swapi with json
+- removed requirements.txt
+
 0.1 (21.6.2021)
 - initial release with only slr reserve call
 

@@ -4,7 +4,7 @@ Class for access to Cisco Smart Account Licensing API
 Required:
 requests
 
-Version: 0.1
+Version: 0.2
 
 """
 
@@ -13,7 +13,7 @@ import json
 
 from requests.models import HTTPError
 
-class Licensing(object):
+class Licensing:
     def __init__(self, client_id, client_secret, disable_warnings=False, timeout=5):
         """
         Class to manage CSSM via the REST API
@@ -86,7 +86,7 @@ class Licensing(object):
         # print(body)
         json_body = json.dumps(body)
         # resp = self.session.post(url,data=json_body)
-        resp = self.session.request(method,url,json=json_body)
+        resp = self.session.request(method,url,json=body)
         result['response'] = resp.json()
         if resp.status_code == 200:
             result['success'] = True
@@ -103,7 +103,7 @@ class Licensing(object):
         :param sadomain: Smart Account name
         :param va: Virtual Account name
         :param reservationcode: Reservation code from device
-        :param licenses: list of licenses in specific format. Examle:
+        :param licenses: list of licenses in specific format. Example:
             [
                 {
                     "quantity" : 1,
@@ -134,7 +134,11 @@ class Licensing(object):
                 }
             ]
         }
+        # print(json.dumps(payload,indent=2))
+        # print(payload)
+        # res = {"success":1}
         res = self.send_json_request_cssm(url,payload)
+
         # if res['success']:
         #     reserved_licenses = res['response']
         # else:

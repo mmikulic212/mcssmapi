@@ -4,7 +4,7 @@ Class for access to Cisco Smart Account Licensing API
 Required:
 requests
 
-Version: 0.2
+Version: 0.3
 
 """
 
@@ -144,6 +144,39 @@ class Licensing:
         # else:
         #     reserved_licenses = False
         return res
+
+    def remove_product_instance(self, sadomain, va, returncode, product_instance ):
+        """
+        Product Instance Remove V2
+        :param sadomain: Smart Account domain name
+        :param limit: limit licenses per connection (as pagination)
+        :param offset: offset from which license usage is getting (as start page)
+        :param *va: Virtual Account names
+        """
+        url = f"https://swapi.cisco.com//services/api/smart-accounts-and-licensing/v2/accounts/{sadomain}/virtual-accounts/{va}/devices/remove"
+       
+        payload = {
+                    "productInstacesRemoveRequests": [
+                        {
+                        "sudi": {
+                            "suvi": "suvi1",
+                            "uuid": "ba8892ae89bf45688ce00302d1db8a35",
+                            "hostIdentifier": "DHR_3000",
+                            "udiPid": "CISCO2811",
+                            "udiSerialNumber": "123475849",
+                            "udiVid": "string",
+                            "macAddress": "string"
+                        },
+                        "productTagName": "regid.2015-09.com.cisco.Nexus_7000,1.0_6e2b6ed8-fe9b-48e0-a71f-74eaf1bcc991",
+                        "returnCode": "Demo Virtual Account"
+                        }
+                    ],
+                    "productInstancesRemoveRequests": [
+                        {}
+                    ]
+                    }
+
+        res = self.send_json_request_cssm(url,payload)
 
     def smart_license_usage(self, sadomain, limit=50, offset=0,*va):
         """

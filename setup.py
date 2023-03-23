@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name='mCSSMapi',
-    version='0.2',
+    version='0.3',
     author='Michael Mikulic',
     author_email='',
     description='The mcssmapi library providing access to Cisco Smart Account licensing API with python.',
